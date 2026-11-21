@@ -1,5 +1,19 @@
 # Du dossier de faisabilité au moteur KEM
 
+**21 novembre 2026 — issue de la nouvelle réduction CCA.** Les deux
+voies examinées traitent les mondes du défi et Decaps adaptative, mais
+n'obtiennent pas de borne IND-CCA non triviale à partir de prémisses
+indépendantes pour le R1 fixé. Leur vérification ferme cette tentative
+de preuve, **pas C01**. La décision convenue est de sélectionner une
+architecture R2 sur preuves, paramètres, formats et coûts avant d'écrire
+du code R2. Le tri des candidats antérieurs et d'un KEM matriciel direct
+supplémentaire ne retient **aucun R2** pour le profil module 6 × 256 à
+clé de 32 octets. La prochaine décision demande un théorème indépendant
+applicable à une construction exacte, puis des paramètres, formats et
+coûts vérifiés avant le prototype. Une autre preuve R1 ne serait retenue qu'avec
+une propriété propre à R1 justifiée indépendamment et tous les coûts
+composés. R1 reste un moteur expérimental inchangé.
+
 **21 novembre 2026 — décision après l'audit des neuf termes.** Les cinq
 termes passifs n'ont reçu que des plafonds presque égaux à `1`, les deux
 termes de correction des plafonds triviaux, et la simulation publique

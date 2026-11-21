@@ -16,7 +16,17 @@ engine qualification cycle; M28 is the latest numbered C01 research cycle.
 Post-M28 blocks and the 20–21 November 2026 C01 studies are unnumbered and are
 the most recent work. **Concrete C01 is still open; R1 is experimental.**
 
-The latest numerical audit covers all nine terms of the fixed-source
+The latest two-world CCA study established two scoped classical game
+identities for adaptive Decaps, but no independently justified,
+resource-matched nontrivial bound for the fixed R1 program. Finite checks
+do not prove the security premises. This is a limit of the examined
+arguments, not a reported break of R1. The R2 architecture gate screened
+the earlier candidates and an additional direct matrix-LWE KEM before
+implementation; no suitable rank-six, degree-256 R2 is selected in this
+examined set. This is not an impossibility claim. No R2 code was written.
+The detailed evidence remains local and outside the public repository.
+
+The preceding numerical audit covers all nine terms of the fixed-source
 classical C01 inequality. Its exact universal ceilings are too weak for a
 security claim. A conditional obstruction applies to the selected
 public-view Decaps proof route, not to R1 security itself; a different

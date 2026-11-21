@@ -1,5 +1,28 @@
 # Journal de recherche — KEM 1536
 
+## 21 novembre 2026 — réduction CCA à deux mondes et porte R2
+
+Deux analyses de réduction ont été construites à partir du R1 exécuté,
+sans modifier le moteur. L'une mesure l'écart signé entre les deux mondes
+avec les réponses Decaps adaptatives ; l'autre simule Decaps exactement
+dans un jeu PKE filtré. Leurs identités de jeux et leurs coûts sont
+explicités dans deux capsules locales scellées. Des vérifications finies
+et une contre-lecture interne contrôlent l'algèbre et la portée des jeux,
+sans mesurer la résistance cryptographique du R1.
+
+Le résultat scientifique est négatif dans la portée examinée : aucune
+borne indépendante non triviale n'a été obtenue pour les prémisses du
+R1 à fonctions fixées. C01 concret reste ouvert, R1 expérimental ; les
+résultats ne décrivent pas une attaque contre R1. La porte de décision
+prévue a déclenché un nouveau tri R2 avant toute implémentation. Les
+candidats précédents et une construction directe matricielle
+supplémentaire ont été examinés sur leurs preuves et conditions
+paramétriques. Aucun n'est sélectionnable pour un R2 module 6 × 256
+à clé de 32 octets avec preuve et coûts établis ; aucun code R2 n'a été
+lancé. La source et le calcul sont conservés dans `c01-r2-fallback-001`.
+Les trois capsules détaillées restent locales, hors GitHub. Cette entrée
+sert à conserver la chronologie du développement, sans préparer un article.
+
 ## 21 novembre 2026 — audit quantitatif des neuf termes, décision de preuve
 
 Les neuf termes de la chaîne classique du R1 fixé ont été examinés

@@ -38,8 +38,8 @@ They have not gone back to M15:
 | Engine qualification | M23 | Latest numbered, scoped PC/AArch64 qualification work; detailed later records are local |
 | C01 security research | M28 | Latest numbered, scoped C01 work; subsequent Blocks 1–4 and the 20–21 November studies are unnumbered |
 
-The **latest work** is the 21 November C01 nine-term numerical audit described
-below. It makes a decision about the current proof route, while the
+The **latest work** is the 21 November two-world CCA reduction and R2
+candidate screen described below. It decides two new proof routes, while the
 concrete security argument **C01 remains open**. Later M numbers do not
 certify security or change the experimental status of R1. The two engine CI
 jobs check current `main`; the separate M15 job replays its historical
@@ -47,6 +47,25 @@ snapshot. See the [C01 scope](docs/ETAT_RECHERCHE_C01.md) and
 [verification record](docs/TESTS_AND_EVIDENCE.md).
 
 ## Current research status — C01 construction gates, 21 November 2026
+
+Two new classical routes analyze the R1 challenge worlds together with
+adaptive Decaps. A signed world-to-world identity can cancel matching
+simulation errors; a filtered-PKE game can simulate the exact Decaps
+responses. Both pass scoped finite logic checks, but neither has an
+independently justified, resource-matched security bound for fixed R1.
+This is a decision about these proof routes, not evidence of an R1 break.
+The R2 architecture gate has screened the previous candidates and a
+further direct matrix-LWE KEM. No candidate yet has a reviewed theorem,
+concrete parameters and costs for the requested rank-six, degree-256
+module profile with a 32-byte key. **No R2 architecture is selected and
+no R2 code was written.** This is a bounded screen, not a claim that no
+suitable construction can exist.
+The detailed capsules remain local and excluded from GitHub. No R1 engine
+code, parameters, formats or API changed. **Concrete C01 remains open;
+R1 is experimental.** See the [research report](docs/RAPPORT_RECHERCHE.md)
+and [chronological journal](docs/JOURNAL_RECHERCHE.md).
+
+The preceding nine-term audit found the following:
 
 The nine terms of the classical fixed-function R1 argument have now been
 examined together. Five have exact universal ceilings of `1−2^-256`;

@@ -1,5 +1,56 @@
 # Rapport de recherche — MLKEM-1536 Core, KEM à six blocs de 256 coefficients
 
+**21 novembre 2026 — nouvelle réduction IND-CCA du R1, décision vérifiée.**
+Deux routes ont été développées pour traiter le défi et les réponses Decaps
+adaptatives dans le même jeu classique, sous la loi des clés honnêtes dont
+KeyGen se termine. La première remplace la somme de deux erreurs par leur
+écart signé entre les mondes du défi. Cette identité exacte permet une
+annulation réelle lorsque les erreurs coïncident, mais aucune hypothèse
+indépendante applicable au R1 fixé ne borne l'écart ni le jeu pré-défi
+restant aux ressources induites. Un modèle abstrait fini vérifié écarte
+l'inférence générale « sécurité passive et correction impliquent petit
+écart » ; ce modèle ne représente pas R1 et ne constitue pas une attaque.
+
+La seconde route simule exactement les réponses Decaps au moyen d'un jeu
+de déchiffrement PKE filtré par la règle de validation du R1. Elle évite
+le simulateur à vue publique, mais déplace la charge de preuve vers la
+sécurité de ce jeu PKE avec requêtes adaptatives, plus deux changements
+de loi et un saut de clé sous vraies réponses Decaps. Ces avantages n'ont
+pas de borne indépendante et chiffrée pour les fonctions SHA3/SHAKE
+fixées. Présumer leur petitesse serait supposer le résultat recherché.
+Les deux dossiers recensent les requêtes et le travail induit ; sans
+bornes des prémisses, ils ne donnent aucun chiffre de
+sécurité global. La portée quantique et le passage aux binaires restent
+distincts.
+
+Les dossiers locaux `c01-signed-cca-001` et `c01-alternative-cca-001`,
+conservés sous `artifacts/retained/`, contiennent les jeux, coûts,
+contre-lectures, lecteurs finis et sceaux. Ils ne sont pas exportés sur
+GitHub. **Décision : ces deux nouvelles voies ne ferment pas C01 concret.**
+Ce verdict porte sur les prémisses et voies examinées ; il ne montre ni
+faiblesse du moteur ni impossibilité d'une autre preuve. Le dossier
+conditionnel QROM/RC1 conserve exactement sa portée. Le moteur R1, ses
+paramètres, formats et API sont inchangés ; R1 reste expérimental.
+Conformément à la porte de décision convenue, un tri R2 a été effectué
+avant tout code R2. Le réexamen des candidats antérieurs et
+l'ajout de la construction directe [Boyen–Li 2019](https://research-repository.griffith.edu.au/server/api/core/bitstreams/a4b0f038-ec05-4c1e-a814-f1934599aabe/content)
+n'ont produit **aucun candidat sélectionnable** pour le module 6 × 256
+à clé de 32 octets. Cette dernière construction possède un théorème
+IND-CCA classique en modèle standard, mais pour LWE matriciel. La
+recette paramétrique publiée exige notamment, avec `λ=256`,
+`n−4λ ≥ ℓ·2log₂(q)` et `ℓ≥λ` : même le diagnostic optimiste
+`n=1536, q=7681` échoue. Ces valeurs diagnostiques ne constituent pas
+des paramètres valides de la construction, et cette comparaison ne
+prouve rien contre une autre conception. Les autres candidats gardent
+des lacunes de théorème applicable, paramètres, formats ou coûts déjà
+consignées. Le dossier local `c01-r2-fallback-001` conserve les sources,
+calculs et contrôles ; il reste hors Git. **R2 n'est pas sélectionné et
+aucun code R2 n'a été créé.** La porte pourra être rouverte avec un
+théorème revu applicable au profil exact et une instanciation concrète
+complète. L'historique conserve également les résultats négatifs afin
+de reconstruire les décisions de développement ; il ne constitue pas
+une rédaction d'article.
+
 **21 novembre 2026 — audit numérique des neuf termes du R1 fixé.**
 Nous avons repris les neuf avantages et événements de l'inégalité classique
 `R1-CHAIN`, sous la même loi de KeyGen honnête terminée, et cherché pour

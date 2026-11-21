@@ -12,7 +12,22 @@ later C01 studies are separate research work. M10 remains the delivered
 engine reference. M15 is the historical public replay lot, not the current
 project milestone. M18 and M19 retain their historical outcomes.
 
-The latest numerical audit checked all nine terms of the exact classical
+The latest two-world CCA study passed the signed-game verifier's 625
+algebraic cases, two exhaustive toy instances, source pins and seal.
+The filtered-PKE route passed 16,384 toy models and 1,048,576 adaptive
+trace cases, plus its source pin and seal. Independent internal reading
+checked the scope of the games. These checks validate only finite
+algebra, exact simulation in the stated model and provenance; they do
+not measure R1's CCA advantage or establish a useful numerical bound.
+The R2 fallback screen pins the accepted Boyen–Li 2019 manuscript and
+checks its printed parameter relation for the target 32-byte key. The
+result is no selected R2 candidate in the examined corpus. The arithmetic
+screen does not verify the paper's proof, certify parameters or prove
+impossibility of another construction. The three detailed capsules are
+local and excluded from GitHub. No new engine, binary, attack benchmark
+or hosted CI result is credited to this study.
+
+The preceding numerical audit checked all nine terms of the exact classical
 fixed-R1 chain. The passive reader verified exact formulas and ceilings
 in 4,096 finite toy models; the Decaps reader checked 31,680 finite
 models and 332 negative controls; the correction reader checked exact

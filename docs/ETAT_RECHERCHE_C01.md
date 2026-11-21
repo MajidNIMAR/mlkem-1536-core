@@ -19,6 +19,35 @@ the frozen public replay lot, not the project's current milestone. These
 numbers label work packages rather than engine versions or security levels.
 The M16 note below is historical.
 
+## Two-world CCA reduction decision — 21 November
+
+The latest unnumbered study constructs two different exact classical
+game routes for fixed-source R1, including adaptive Decaps. A signed
+cross-world error identity avoids separately charging two errors, but
+its remaining gap and prechallenge game have no independent useful bound.
+An alternative uses a filtered-PKE decryption game to simulate R1
+Decaps exactly, at the cost of a stronger adaptive PKE security premise
+and remaining challenge terms, also unbounded for fixed R1. Finite model
+checks and internal counter-reading establish the stated game algebra,
+not the cryptographic premises or quantum security. An abstract negative
+control limits a generic inference; it is not an R1 attack.
+
+**Decision: neither examined route yields a nontrivial, resource-matched
+IND-CCA bound for fixed R1. C01 concrete remains open.** The conditional
+QROM/RC1 dossier is unchanged. Detailed sealed evidence is retained
+locally in `artifacts/retained/c01-{signed,alternative}-cca-001/`, outside
+the public export. R1 code, parameters, formats and API are unchanged.
+The agreed fallback gate screened earlier R2 candidates and a direct
+standard-model matrix-LWE KEM from Boyen–Li 2019. That published theorem
+does not instantiate the requested module profile by substitution; its
+displayed parameter recipe also fails a 32-byte-key diagnostic at matrix
+row count 1536. This is a bounded screen, not an impossibility theorem.
+No R2 architecture is selected or coded. The private
+`artifacts/retained/c01-r2-fallback-001/` capsule retains source pins,
+parameter arithmetic and the no-selection decision. A theorem for the
+exact architecture, concrete parameters, formats and costs are required
+before this gate reopens.
+
 ## Numerical audit of all nine fixed-R1 terms — 21 November
 
 The latest study examined every term of the exact classical `R1-CHAIN`
