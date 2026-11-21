@@ -1,5 +1,21 @@
 # Du dossier de faisabilité au moteur KEM
 
+**21 novembre 2026 — nouvelle piste R2, sélection suspendue.** Une PKE
+mathématique révisée sur `6 × 256`, `q=13313`, `CBD(1)` et chiffré non
+compressé possède maintenant une preuve de correction pour tout son
+support. Elle offre une entrée précise pour une construction à deux
+chiffrés de type Naor–Yung et une conversion KEM conditionnelle. La
+premier criblage historique apparié donne des coûts modélisés inférieurs
+à R1 dans six variantes ; il renforce la nécessité d'une autre sélection
+paramétrique. La prochaine porte de décision est **substantielle** :
+évaluer la résistance IND-CPA aux paramètres exacts sous un budget commun,
+choisir une preuve
+non interactive adaptée à la relation exacte avec ses coûts et son modèle,
+puis composer une borne CCA/KEM avant le prototype. Le coût de deux
+chiffrés et deux clés doit être accepté ou faire rejeter cette route.
+**R2 n'est pas sélectionné, C01 concret de R1 reste ouvert ; le moteur
+R1 est inchangé.** Le rapport et le journal gardent les raisons.
+
 **21 novembre 2026 — issue de la nouvelle réduction CCA.** Les deux
 voies examinées traitent les mondes du défi et Decaps adaptative, mais
 n'obtiennent pas de borne IND-CCA non triviale à partir de prémisses

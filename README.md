@@ -38,15 +38,34 @@ They have not gone back to M15:
 | Engine qualification | M23 | Latest numbered, scoped PC/AArch64 qualification work; detailed later records are local |
 | C01 security research | M28 | Latest numbered, scoped C01 work; subsequent Blocks 1–4 and the 20–21 November studies are unnumbered |
 
-The **latest work** is the 21 November two-world CCA reduction and R2
-candidate screen described below. It decides two new proof routes, while the
-concrete security argument **C01 remains open**. Later M numbers do not
+The **latest work** is a conditional R2 architecture study following the
+21 November two-world CCA reduction and R2 candidate screen. It proves
+universal decoding correctness for a revised mathematical rank-six PKE,
+but gives no complete security bound. The concrete R1 security argument
+**C01 remains open**. Later M numbers do not
 certify security or change the experimental status of R1. The two engine CI
 jobs check current `main`; the separate M15 job replays its historical
 snapshot. See the [C01 scope](docs/ETAT_RECHERCHE_C01.md) and
 [verification record](docs/TESTS_AND_EVIDENCE.md).
 
 ## Current research status — C01 construction gates, 21 November 2026
+
+A revised mathematical rank-six, degree-256 base PKE now has a universal
+correction certificate for `q=13313`, independent `CBD(1)` noise and
+uncompressed ciphertexts: every coefficient error is at most `3073`,
+below the decoder margin. The proposed Naor–Yung route and 32-byte KEM
+conversion are conditional on an independently bounded IND-CPA base PKE
+and a suitable noninteractive proof for the exact joint-encryption
+relation. No such proof system, concrete security bound, or R2 engine is
+selected. With explicit uniform matrices, two public keys total at least
+37,632 bytes before the CRS and two ciphertexts at least 6,272 bytes
+before the proof. This two-ciphertext design has a material cost relative
+to the single-encapsulation objective. A paired historical Core-SVP
+screen gives lower modeled costs for this candidate than for R1 in all
+six variants; it supplies no overall security rating or native attack
+assessment. The scoped result and its sources
+are in the [research report](docs/RAPPORT_RECHERCHE.md); detailed readers
+remain local. R1 code and its concrete C01 status are unchanged.
 
 Two new classical routes analyze the R1 challenge worlds together with
 adaptive Decaps. A signed world-to-world identity can cancel matching

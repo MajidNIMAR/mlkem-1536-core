@@ -1,5 +1,28 @@
 # Journal de recherche — KEM 1536
 
+## 21 novembre 2026 — piste R2 Naor–Yung, condition de correction acquise
+
+Le tri R2 précédent a été prolongé par une construction mathématique
+précise : PKE module de rang 6 et degré 256, `q=13313`, bruit `CBD(1)`
+indépendant et chiffré non compressé. Une borne universelle de l'erreur
+(`3073`) sous la marge du décodeur établit la correction pour toutes les
+clés et tous les aléas du support annoncé. Un lecteur indépendant a
+contrôlé les `12 294` cas du décodeur et les tailles structurelles.
+
+Nous avons relié cette PKE à une relation de double chiffrement et à une
+conversion KEM classique conditionnelle, sans choisir ni implémenter la
+preuve non interactive nécessaire. La voie exige deux chiffrés et deux
+clés publiques ; son coût, sa sécurité IND-CPA, son modèle de preuve et
+sa portée quantique restent à établir. Un criblage apparié avec le modèle
+Core-SVP historique donne des coûts modélisés inférieurs à R1 dans ses
+six variantes ; ce n'est ni un niveau de sécurité ni une attaque observée.
+Le runtime épinglé nécessaire aux nouveaux calculs M10 manque localement.
+Une recherche ciblée sur les
+preuves alternatives de R1 n'a pas donné d'hypothèse indépendante
+transférable au programme fixé. Les capsules locales conservent les
+sources et les vérifications, hors export public. **R2 non sélectionné,
+C01 concret ouvert, R1 inchangé et expérimental.**
+
 ## 21 novembre 2026 — réduction CCA à deux mondes et porte R2
 
 Deux analyses de réduction ont été construites à partir du R1 exécuté,

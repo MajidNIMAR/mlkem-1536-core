@@ -13,11 +13,29 @@ its final cryptographic freeze is deferred, and it is not production-qualified.*
 M24–M28 are the latest numbered, scoped **C01 research** blocks. M23 remains
 the latest numbered engine qualification cycle, following M20–M22. Neither
 kind of result closes concrete C01.
-Later post-M28 blocks and the 20–21 November C01 studies are unnumbered; they
-are the newest research. M10 remains the delivered engine reference. M15 is
+Later post-M28 blocks and the 20–21 November C01/R2 studies are unnumbered;
+they are the newest research. M10 remains the delivered engine reference. M15 is
 the frozen public replay lot, not the project's current milestone. These
 numbers label work packages rather than engine versions or security levels.
 The M16 note below is historical.
+
+## R2 architecture hypothesis — 21 November
+
+An exact mathematical base PKE at rank six and degree 256, with `q=13313`,
+independent `CBD(1)` noise and uncompressed components, has a universal
+correction proof on its declared support. The error bound `3073` is below
+the circular decoder margin. A conditional Naor–Yung double-encryption
+relation and a classical CCA-PKE-to-32-byte-KEM conversion have been
+specified. Their security premise is not established for this PKE: no
+resource-matched IND-CPA bound, chosen one-time simulation-sound NIZK,
+combined numerical CCA bound or fixed-SHA3/SHAKE transfer is credited.
+The two-ciphertext overhead is at least 6,272 bytes before proof; explicit
+public matrices require at least 37,632 bytes for the two public keys
+before CRS. A paired historical Core-SVP screen places the candidate
+below R1 in all six modeled variants; this is a limited diagnostic, not
+a complete attack analysis or security rating. **This is not a selected
+R2.** The
+private research capsules are outside GitHub. R1 and C01 are unchanged.
 
 ## Two-world CCA reduction decision — 21 November
 

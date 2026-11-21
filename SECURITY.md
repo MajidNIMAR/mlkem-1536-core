@@ -13,10 +13,21 @@ The `M` numbers identify work packages, not versions or certification levels.
 M10 remains the delivered engine reference. M15 is the historical public
 replay lot pinned to its original source commit. M23 is the latest numbered
 engine qualification cycle; M28 is the latest numbered C01 research cycle.
-Post-M28 blocks and the 20–21 November 2026 C01 studies are unnumbered and are
+Post-M28 blocks and the 20–21 November 2026 C01/R2 studies are unnumbered and are
 the most recent work. **Concrete C01 is still open; R1 is experimental.**
 
-The latest two-world CCA study established two scoped classical game
+The latest R2 study proves universal correction only for a *revised
+mathematical* rank-six PKE with `q=13313`, `CBD(1)` and no compression.
+Its Naor–Yung and KEM security argument is conditional on as-yet
+unestablished IND-CPA and noninteractive-proof premises; no complete
+numerical CCA bound, fixed-function transfer or R2 implementation is
+claimed. The design needs two ciphertexts and two public keys. R2 is not
+selected. A paired historical Core-SVP screen gives lower modeled costs
+than R1 in six variants; this is not a complete security estimate. R1
+and its concrete C01 status are unchanged. Detailed
+verification remains local outside the public repository.
+
+The preceding two-world CCA study established two scoped classical game
 identities for adaptive Decaps, but no independently justified,
 resource-matched nontrivial bound for the fixed R1 program. Finite checks
 do not prove the security premises. This is a limit of the examined

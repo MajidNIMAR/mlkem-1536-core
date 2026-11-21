@@ -5,14 +5,31 @@ The construction and Rust engine are experimental. Concrete security
 qualification C01 remains open. This page reports what was checked and how
 the evidence can be examined; it does not assign a security level.
 
-The most recent work is the unnumbered C01 study of 21 November. M24–M28
+The most recent work is the unnumbered R2 architecture study of 21 November,
+following the unnumbered C01 proof studies. M24–M28
 are the latest numbered scoped C01 research blocks; M20–M23 are the latest
 numbered scoped engine qualification cycles. Post-M28 Blocks 1–4 and the
 later C01 studies are separate research work. M10 remains the delivered
 engine reference. M15 is the historical public replay lot, not the current
 project milestone. M18 and M19 retain their historical outcomes.
 
-The latest two-world CCA study passed the signed-game verifier's 625
+The R2 candidate's parameter reader checked primality, a 512th root,
+structural byte counts, a negative control at the preceding NTT-friendly
+prime and 12,294 decoder cases. A separate conditional theorem reader
+checked the same arithmetic, pinned primary sources and the finite
+triangle identity for the proposed KEM wrapper. These checks establish
+the stated mathematical correction and bookkeeping, **not** IND-CPA,
+NIZK soundness, a CCA security level, an implementation or a benchmark.
+A paired historical Core-SVP model was rerun with equal conventions for
+R1 and this candidate; each of its six variants reports a lower modeled
+cost for the candidate. The pinned Sage runtime for the newer M10
+estimators is unavailable on this PC, so no new M10 estimate is credited.
+The screen has no complete attack coverage, fixed success probability or
+bounded-memory conclusion.
+The detailed capsules remain local and excluded from GitHub. No new
+engine or hosted CI result is credited to these checks.
+
+The preceding two-world CCA study passed the signed-game verifier's 625
 algebraic cases, two exhaustive toy instances, source pins and seal.
 The filtered-PKE route passed 16,384 toy models and 1,048,576 adaptive
 trace cases, plus its source pin and seal. Independent internal reading

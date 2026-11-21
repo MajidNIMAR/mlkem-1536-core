@@ -1,5 +1,56 @@
 # Rapport de recherche — MLKEM-1536 Core, KEM à six blocs de 256 coefficients
 
+**21 novembre 2026 — piste R2 à correction universelle et conversion KEM conditionnelle.**
+Une nouvelle PKE mathématique sur le module `6 × 256` a été définie avec
+`q=13313`, des coefficients de bruit `CBD(1)` indépendants et des chiffrés
+non compressés. Pour toute clé et tout aléa dans ce support, l'erreur par
+coefficient est au plus `3073`, tandis que les deux centres de décodage
+sont séparés d'au moins `6656` sur le cercle. Le décodeur est donc correct
+pour **toutes** ces entrées. La primalité de `q`, l'existence d'une racine
+d'ordre 512, le calcul des tailles et les `12 294` cas du décodeur ont été
+rejoués indépendamment. Ce certificat porte sur la PKE mathématique
+révisée, pas sur le code R1 ni sur une résistance cryptographique.
+
+La voie [Naor–Yung/Sahai/Lindell](https://eprint.iacr.org/2002/057)
+combine deux chiffrés indépendants d'un même message avec une preuve
+non interactive à simulation-soundness ponctuelle. Nous avons spécifié
+la relation exacte à prouver et établi une conversion classique
+conditionnelle d'une PKE IND-CCA correcte vers un KEM à clé de 32 octets,
+avec oracle de décapsulation adaptatif. Cette conversion ne devient une
+borne utile que si la PKE de base est IND-CPA aux ressources visées et si
+la preuve non interactive requise est effectivement instanciée et bornée.
+L'exemple module-lattice [Topaz](https://eprint.iacr.org/2026/459)
+emploie un oracle aléatoire pour sa preuve ; son théorème PKE et ses
+paramètres ne se transfèrent pas au R2 à SHA3/SHAKE fixés par simple
+substitution.
+
+Le coût structurel est important : deux clés publiques et deux chiffrés,
+soit au moins `37 632` octets de clé publique avant CRS et `6 272` octets
+de chiffré **avant la preuve** avec matrice uniforme explicite. Une matrice
+seedée abaisserait le plancher de clé publique à `5 440` octets, mais
+ajouterait une hypothèse de générateur fixé et changerait la relation de
+preuve. La réduction du bruit relativement à `q` exige aussi une analyse
+de résistance aux nouveaux paramètres. Un criblage apparié avec le modèle
+historique Core-SVP du projet, aux mêmes conventions et sans plafond de
+mémoire, donne des coûts modélisés **inférieurs dans ses six variantes**
+pour ce candidat par rapport à R1. Ce résultat ne couvre ni les coûts
+complets, ni une probabilité de succès certifiée, ni les méthodes récentes ;
+le runtime Sage épinglé des estimateurs M10 manque sur ce PC, donc aucun
+nouveau calcul M10 n'est crédité. Les entrées et sorties détaillées restent
+dans une capsule locale. Aucun niveau de sécurité n'est adopté. Ce coût
+à deux chiffrés doit être
+confronté à l'objectif initial d'une seule encapsulation `6 × 256`.
+
+Les capsules locales `r2-primary-search-001`, `r2-parameter-screen-001`,
+`r1-independent-route-001`, `r2-naor-yung-001` et
+`r2-security-screen-001` conservent les sources
+épinglées, le théorème conditionnel, les contrôles et les limites ; elles
+restent hors GitHub. La recherche parallèle d'une prémisse indépendante
+sur R1 n'a livré aucune borne transférable à ses fonctions fixées. **Décision :
+R2 est une hypothèse d'architecture, pas un moteur sélectionné ; C01
+concret de R1 reste ouvert.** Aucun code, paramètre ni format R1 n'a changé.
+Ce dossier constitue l'historique de développement, pas un article.
+
 **21 novembre 2026 — nouvelle réduction IND-CCA du R1, décision vérifiée.**
 Deux routes ont été développées pour traiter le défi et les réponses Decaps
 adaptatives dans le même jeu classique, sous la loi des clés honnêtes dont
